@@ -1,0 +1,43 @@
+plugins {
+    id 'org.springframework.boot' version '2.5.0'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'java'
+}
+
+group = 'az.bankrespublika.mobilshobe'
+version = '0.0.1'
+sourceCompatibility = '11'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // apache common lang
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version: '3.0'
+
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.3.1'
+
+    // lombok
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '0.11.0'
+
+    // spring data jpa
+    implementation group: 'org.springframework.boot', name: 'spring-boot-starter-data-jpa', version: '2.4.0'
+
+    // postgresql jdbc driver
+    implementation group: 'org.postgresql', name: 'postgresql', version: '42.2.20'
+
+    // firebase admin
+    implementation group: 'com.google.firebase', name: 'firebase-admin', version: '7.1.1'
+
+    // mapstruct
+    implementation 'org.mapstruct:mapstruct:1.4.2.Final'
+    annotationProcessor 'org.mapstruct:mapstruct-processor:1.4.2.Final'
+}
+
+test {
+    useJUnitPlatform()
+}
